@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Question</title>
+    <link rel="stylesheet" href="mp.css" />
+  </head>
+  <body>
+    
+    <!-- Screen 1 -->
+    <div id="screen1" class="screen active">
+      <img src="images/1.gif" alt="GIF 2" />
+      <h2>Do You Love Me? 😇</h2>
+      <h4>I am all yours!! 💖</h4>
+      <button onclick="goYes()">Yes</button>
+      <button onclick="goNo1()">No</button>
+    </div>
+
+    <!-- Screen 2 -->
+    <div id="screen2" class="screen">
+      <img src="images/2.gif" alt="GIF 2" />
+      <h2>Please Think Again... 😢</h2>
+      <h4>Itni jaldi Na mt karo... 💔</h4>
+      <button onclick="goYes()">Yes</button>
+      <button onclick="goNo2()">No</button>
+    </div>
+
+    <!-- Screen 3 -->
+    <div id="screen3" class="screen">
+      <img src="images/3.gif" alt="GIF 3" />
+      <h2>Ek aur baar sooch loo 😟</h2>
+      <h4>Kyu mana kar rai ho bar bar.. 💔</h4>
+      <button onclick="goYes()">Yes</button>
+      <button onclick="goNo3()">No</button>
+    </div>
+
+    <!-- Screen 4 -->
+    <div id="screen4" class="screen">
+      <img src="images/4.gif" alt="GIF 4" />
+      <h2>Baby man bhi jao !! kitna bhao khao gi ab !! 😢</h2>
+      <h4>Bht Ghalat baat ha yar 💔</h4>
+      <button onclick="goYes()">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <!-- Screen 5 (Final Yes Page) -->
+    <!-- Screen 5 (Final Yes Page) -->
+    <div id="screen5" class="screen">
+      <img src="images/5.gif" alt="GIF 1" />
+      <h2>Yesss! I knew it !! Love You a lot Bachaa ❤️</h2>
+      <button onclick="openNote()">Open Note</button>
+    </div>
+
+    <!-- Hidden Letter Envelope -->
+    <div id="noteBox" class="note-box">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+          <span class="close-btn" onclick="closeNote()">&times;</span>
+          <h2>💌 My Love Letter</h2>
+          <p>
+            Tumhe dekh kar hamesha lagta hai ke zindagi ne mujhe sabse
+            khoobsurat tohfa diya hai 💖 <br /><br />
+            Tum meri coffee aur meri chocolate dono ho… bina tumhare din ka
+            taste hi adhoora lagta hai ☕🍫. <br /><br />
+            Kabhi kabhi sochta hoon, shayad tum ek jaadu ho jo meri har udaasi
+            ko hansi me badal dete ho 😍. <br /><br />
+            Tumhari aankhen Google ki tarah hain… kyunki mujhe jo bhi chahiye
+            hota hai, sab unhi me milta hai 😉. <br /><br />
+            Aur sach ye hai ke tum meri ‘Yes button’ ho… jisko click karte hi
+            meri duniya perfect ho jati hai ❤️✨. <br /><br />
+            Aur jab tum paas hoti ho na… toh dil karta hai waqt bas wahin ruk
+            jaye ⏳💕 <br /><br />
+            Tum meri duaon ka woh hissa ho jo hamesha qubool ho jata hai 💖.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="mp.js"></script>
+  </body>
+</html>

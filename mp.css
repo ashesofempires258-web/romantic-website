@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #d1b8e7, #b377d1, #9a3df0, #6e00b3);
+  background-size: 400% 400%; /* smooth movement */
+  animation: gradientMove 7s ease infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+img {
+  width: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+h2, h4 {
+  overflow: hidden;        /* ensures text hidden initially */
+  border-right: .15em solid #c71585; /* cursor */
+  white-space: nowrap;
+  animation: typing 5s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20%; }
+}
+
+
+h2 {
+  font-size: 28px;
+  margin: 10px 0;
+  color: #480082;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 10px 0 30px;
+  color: #c71585;
+}
+
+button {
+  background-color: #480082;
+  color: #C71585;
+  border: 2px solid #c8a2c8;
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #c71585;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   /* add this */
+  height: 100vh;             /* ensure full viewport height */
+}
+
+
+.active {
+  display: flex;
+}
+#noBtn {
+  position: relative;   /* start me normal position */
+  transition: all 0.3s ease;
+}
+
+.note-box {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Envelope container */
+.envelope {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background: #f9c6d0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  animation: popIn 0.5s ease;
+}
+
+/* Flap (top triangle) */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 125px solid #e75480;
+  transform-origin: top;
+  transition: transform 0.8s ease;
+}
+
+/* Letter content */
+.letter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.8s ease;
+  overflow-y: scroll;     scrollbar-width: none;  
+}
+
+
+.letter::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.letter h2 {
+  color: #c71585;
+  margin-bottom: 10px;
+}
+
+.letter p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #e75480;
+}
+
+/* Envelope open effect */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+  transform: translateY(0);
+}
+
+/* Animation */
+@keyframes popIn {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
